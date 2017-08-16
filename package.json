@@ -1,0 +1,14 @@
+{
+	"name": "myNightwatchProject",
+  	"version": "1.0.24",
+  	"description": "Learn how to use nightwatch for front-end testing. step-by-step tutorial",
+  	"main": "index.js",
+  	"engines": {
+    	"node": "6.11.2"
+  	},
+	"scripts": {
+		"postinstall": "node nightwatch.conf.js",
+		"e2e": "nightwatch --config nightwatch.conf.BASIC.js"
+	}
+}
+

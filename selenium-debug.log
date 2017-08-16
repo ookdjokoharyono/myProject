@@ -1,0 +1,44 @@
+13:59:02.077 INFO - Selenium build info: version: '3.4.0', revision: 'unknown'
+13:59:02.078 INFO - Launching a standalone Selenium Server
+2017-08-16 13:59:02.095:INFO::main: Logging initialized @233ms to org.seleniumhq.jetty9.util.log.StdErrLog
+13:59:02.136 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+13:59:02.137 INFO - Driver provider com.opera.core.systems.OperaDriver registration is skipped:
+Unable to create new instances on this machine.
+13:59:02.137 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+13:59:02.137 INFO - Driver provider com.opera.core.systems.OperaDriver is not registered
+13:59:02.138 INFO - Driver provider org.openqa.selenium.safari.SafariDriver registration is skipped:
+ registration capabilities Capabilities [{browserName=safari, version=, platform=MAC}] does not match the current platform WIN10
+2017-08-16 13:59:02.170:INFO:osjs.Server:main: jetty-9.4.3.v20170317
+2017-08-16 13:59:02.203:INFO:osjsh.ContextHandler:main: Started o.s.j.s.ServletContextHandler@d8355a8{/,null,AVAILABLE}
+2017-08-16 13:59:02.335:INFO:osjs.AbstractConnector:main: Started ServerConnector@5f2108b5{HTTP/1.1,[http/1.1]}{0.0.0.0:4444}
+2017-08-16 13:59:02.336:INFO:osjs.Server:main: Started @474ms
+13:59:02.336 INFO - Selenium Server is up and running
+13:59:02.530 INFO - SessionCleaner initialized with insideBrowserTimeout 0 and clientGoneTimeout 1800000 polling every 180000
+13:59:02.549 INFO - Executing: [new session: Capabilities [{acceptSslCerts=true, name=Guinea Pig, browserName=chrome, javascriptEnabled=true, platform=ANY}]])
+13:59:02.557 INFO - Creating a new session for Capabilities [{acceptSslCerts=true, name=Guinea Pig, browserName=chrome, javascriptEnabled=true, platform=ANY}]
+Starting ChromeDriver 2.31.488763 (092de99f48a300323ecf8c2a4e2e7cab51de5ba8) on port 4462
+Only local connections are allowed.
+13:59:05.016 INFO - Detected dialect: OSS
+13:59:05.028 INFO - Done: [new session: Capabilities [{acceptSslCerts=true, name=Guinea Pig, browserName=chrome, javascriptEnabled=true, platform=ANY}]]
+13:59:05.043 INFO - Executing: [get: https://saucelabs.com/test/guinea-pig])
+13:59:05.828 INFO - Done: [get: https://saucelabs.com/test/guinea-pig]
+13:59:05.844 INFO - Executing: [find elements: By.cssSelector: body])
+13:59:05.878 INFO - Done: [find elements: By.cssSelector: body]
+13:59:05.883 INFO - Executing: [is displayed: 0 [[ChromeDriver: chrome on XP (dadd1a4cf404e514d6d4f80c666244bc)] -> css selector: body]])
+13:59:05.925 INFO - Done: [is displayed: 0 [[ChromeDriver: chrome on XP (dadd1a4cf404e514d6d4f80c666244bc)] -> css selector: body]]
+13:59:05.933 INFO - Executing: [get title])
+13:59:05.939 INFO - Done: [get title]
+13:59:05.943 INFO - Executing: [take screenshot])
+13:59:06.286 INFO - Done: [take screenshot]
+13:59:06.298 INFO - Executing: [find element: By.cssSelector: #i_am_a_textbox])
+13:59:06.317 INFO - Done: [find element: By.cssSelector: #i_am_a_textbox]
+13:59:06.321 INFO - Executing: [clear: 1 [[ChromeDriver: chrome on XP (dadd1a4cf404e514d6d4f80c666244bc)] -> css selector: #i_am_a_textbox]])
+13:59:06.341 INFO - Done: [clear: 1 [[ChromeDriver: chrome on XP (dadd1a4cf404e514d6d4f80c666244bc)] -> css selector: #i_am_a_textbox]]
+13:59:06.345 INFO - Executing: [find element: By.cssSelector: #i_am_a_textbox])
+13:59:06.354 INFO - Done: [find element: By.cssSelector: #i_am_a_textbox]
+13:59:06.358 INFO - Executing: [send keys: 1 [[ChromeDriver: chrome on XP (dadd1a4cf404e514d6d4f80c666244bc)] -> css selector: #i_am_a_textbox], [n, i, g, h, t, w, a, t, c, h,  , r, o, o, l, z, !]])
+13:59:06.441 INFO - Done: [send keys: 1 [[ChromeDriver: chrome on XP (dadd1a4cf404e514d6d4f80c666244bc)] -> css selector: #i_am_a_textbox], [n, i, g, h, t, w, a, t, c, h,  , r, o, o, l, z, !]]
+13:59:06.445 INFO - Executing: [take screenshot])
+13:59:06.707 INFO - Done: [take screenshot]
+13:59:06.724 INFO - Executing: [delete session: 69ebcaef-9f96-42b5-863f-af86bfb3b5df])
+13:59:07.627 INFO - Done: [delete session: 69ebcaef-9f96-42b5-863f-af86bfb3b5df]
