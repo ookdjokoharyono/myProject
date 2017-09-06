@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="2">
+
+  <testsuite name="ilotteLogin"
+    errors="1" failures="0" hostname="" id="" package="ilotteLogin" skipped="1"
+    tests="2" time="0.01500" timestamp="Tue, 05 Sep 2017 09:53:22 GMT">
+  
+    <testcase name="Go to Sign In Page" classname="ilotteLogin" time="0.01500" assertions="0">
+    </testcase>
+  
+
+  
+    <system-err>
+        Error while running [Ilotte Login / Go to Sign In Page]:
+
+  Error: Invalid URL: You must either add a url property to &quot;myObjectPage&quot; or provide a url as an argument
+    at Object.navigate (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\nightwatch\lib\page-object\page.js:58:13)
+    at Object.Go to Sign In Page (C:\Users\Djoko. Haryono\nightWatchProject\myProject\test\e2e\ilotteLogin.js:18:16)
+    at Module.call (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\nightwatch\lib\runner\module.js:62:34)
+    at C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\nightwatch\lib\runner\testcase.js:70:29
+    at _fulfilled (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\q\q.js:834:54)
+    at self.promiseDispatch.done (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\q\q.js:863:30)
+    at Promise.promise.promiseDispatch (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\q\q.js:796:13)
+    at C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\q\q.js:556:49
+    at runSingle (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\q\q.js:137:13)
+    at flush (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\q\q.js:125:13)
+    </system-err>
+  
+
+  
+    
+    <testcase
+      name="Sign in Using Correct Password" classname="ilotteLogin">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

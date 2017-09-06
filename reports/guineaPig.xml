@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="1">
+
+  <testsuite name="guineaPig"
+    errors="1" failures="0" hostname="" id="" package="guineaPig" skipped="0"
+    tests="1" time="0.007000" timestamp="Fri, 18 Aug 2017 03:43:07 GMT">
+  
+    <testcase name="Guinea Pig Assert Title" classname="guineaPig" time="0.007000" assertions="0">
+    </testcase>
+  
+
+  
+    <system-err>
+        Error while running [Guinea Pig / Guinea Pig Assert Title]:
+
+  ReferenceError: config is not defined
+    at Object.Guinea Pig Assert Title (C:\Users\Djoko. Haryono\nightWatchProject\myProject\test\e2e\guineaPig.js:9:23)
+    at Module.call (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\nightwatch\lib\runner\module.js:62:34)
+    at C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\nightwatch\lib\runner\testcase.js:70:29
+    at _fulfilled (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\q\q.js:834:54)
+    at self.promiseDispatch.done (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\q\q.js:863:30)
+    at Promise.promise.promiseDispatch (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\q\q.js:796:13)
+    at C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\q\q.js:556:49
+    at runSingle (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\q\q.js:137:13)
+    at flush (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\q\q.js:125:13)
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+  Error while running [Ilotte Login / Sign In to iLotte]:
+
+  ReferenceError: useXpath is not defined
+    at Object.Sign In to iLotte (C:\Users\Djoko. Haryono\nightWatchProject\myProject\test\e2e\ilotteLogin.js:8:4)
+    at Module.call (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\nightwatch\lib\runner\module.js:62:34)
+    at C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\nightwatch\lib\runner\testcase.js:70:29
+    at _fulfilled (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\q\q.js:834:54)
+    at self.promiseDispatch.done (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\q\q.js:863:30)
+    at Promise.promise.promiseDispatch (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\q\q.js:796:13)
+    at C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\q\q.js:556:49
+    at runSingle (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\q\q.js:137:13)
+    at flush (C:\Users\Djoko. Haryono\nightWatchProject\myProject\node_modules\q\q.js:125:13)
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    </system-err>
+  
+
+  
+  </testsuite>
+</testsuites>

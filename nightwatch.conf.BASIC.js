@@ -1,56 +1,58 @@
-//require('.env');
+//require('env2')('.env'); // optionally store youre Evironment Variables in .env
 const SCREENSHOT_PATH = "./screenshots/";
 const BINPATH = './node_modules/nightwatch/bin/';
 
 // we use a nightwatch.conf.js file so we can include comments and helper functions
 module.exports = {
-	"src_folders": [
- 		"test/e2e"// Where you are storing your Nightwatch e2e tests
-  	],
-  	"output_folder": "./reports", // reports (test outcome) output by nightwatch
-  	"selenium": { // downloaded by selenium-download module (see readme)
-    	"start_process": true, // tells nightwatch to start/stop the selenium process
-    	"server_path": "./node_modules/nightwatch/bin/selenium.jar",
-    	"host": "127.0.0.1",
-    	"port": 4444, // standard selenium port
-    	"cli_args": { // chromedriver is downloaded by selenium-download (see readme)
-      	"webdriver.chrome.driver" : "./node_modules/nightwatch/bin/chromedriver",
-        "webdriver.gecko.driver" : "./node_modules/nightwatch/bin/geckodriver",
-        "webdriver.edge.driver" : "./node_modules/nightwatch/bin/edgedriver"
+  "src_folders": [
+    "test/e2e"// Where you are storing your Nightwatch e2e tests
+  ],
+  "page_objects_path" : "test/op",
+  "output_folder": "./reports", // reports (test outcome) output by nightwatch
+  "selenium": { // downloaded by selenium-download module
+    "start_process": true, // tells nightwatch to start/stop the selenium process
+    "server_path": BINPATH + "selenium.jar",
+    "host": "127.0.0.1",
+    "port": 4444, // standard selenium port
+    "cli_args": { // chromedriver is downloaded by selenium-download 
+      "webdriver.chrome.driver" : BINPATH + "chromedriver",
+      "webdriver.gecko.driver" : BINPATH + "geckodriver",
+      "webdriver.edge.driver" : BINPATH + "MicrosoftWebDriver"
+    }
+  },
+  "test_workers" : {"enabled" : true, "workers" : "auto"}, // perform tests in parallel where possible
+  "test_settings": {
+    "default": {
+      "screenshots": {
+        "enabled": true, // if you want to keep screenshots
+        "path": './screenshots' // save screenshots here
+      },
+      "globals": {
+        "waitForConditionTimeout": 5000 // sometimes internet is slow so wait.
+      },
+      "desiredCapabilities": { // use Chrome as the default browser for tests
+        "browserName": "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
       }
-	},
- 	"test_settings": {
-    	"default": {
-      		"screenshots": {
-        		"enabled": true, // if you want to keep screenshots
-        		"path": SCREENSHOT_PATH // save screenshots here
-      		},
-      	"globals": {
-        	"waitForConditionTimeout": 5000 // sometimes internet is slow so wait.
-      	},
-      	"desiredCapabilities": { // use Chrome as the default browser for tests
-        	"browserName": "chrome"
-      	}
-	},
-		"chrome": {
-			"desiredCapabilities": {
-				"browserName": "chrome",
-        		"javascriptEnabled": true // turn off to test progressive enhancement
-        	}
-    	},
-    "firefox": {
+    },
+    "chrome": {
+      "desiredCapabilities": {
+        "browserName": "chrome"
+        }
+    },
+    "edge" : {
+      "desiredCapabilities": {
+        "browserName": "MicrosoftEdge"
+        }
+    },
+    "firefox" : {
       "desiredCapabilities": {
         "browserName": "firefox",
-            "javascriptEnabled": true // turn off to test progressive enhancement
-          }
-      },
-    "edge": {
-      "desiredCapabilities": {
-        "browserName": "edge",
-            "javascriptEnabled": true // turn off to test progressive enhancement
-          }
+        "marionette": true
       }
-	}
+    }
+  }
 }
 
 /**
@@ -59,16 +61,19 @@ module.exports = {
  * on your localhost where it will be used by Nightwatch.
  /the following code checks for the existence of `selenium.jar` before trying to run our tests.
  */
+
 require('fs').stat(BINPATH + 'selenium.jar', function (err, stat) { // got it?
-	if (err || !stat || stat.size < 1) {
-		require('selenium-download').ensure(BINPATH, function(error) {
-			if (error) throw new Error(error); // no point continuing so exit!
-			console.log('✔ Selenium & Chromedriver downloaded to:', BINPATH);
-		});
-	}
+  if (err || !stat || stat.size < 1) {
+    require('selenium-download').ensure(BINPATH, function(error) {
+      if (error) throw new Error(error); // no point continuing so exit!
+      console.log('✔ Selenium & Chromedriver downloaded to:', BINPATH);
+    });
+  }
 });
+
+
 function padLeft (count) { // theregister.co.uk/2016/03/23/npm_left_pad_chaos/
-	return count < 10 ? '0' + count : count.toString();
+  return count < 10 ? '0' + count : count.toString();
 }
 
 var FILECOUNT = 0; // "global" screenshot file count
@@ -80,13 +85,13 @@ var FILECOUNT = 0; // "global" screenshot file count
  * the Platform/Browser where the test was run and the test (file) name.
  */
 function imgpath (browser) {
-	var a = browser.options.desiredCapabilities;
-  	var meta = [a.platform];
-  	meta.push(a.browserName ? a.browserName : 'any');
-  	meta.push(a.version ? a.version : 'any');
-  	meta.push(a.name); // this is the test filename so always exists.
-  	var metadata = meta.join('~').toLowerCase().replace(/ /g, '');
-  	return SCREENSHOT_PATH + metadata + '_' + padLeft(FILECOUNT++) + '_';
+  var a = browser.options.desiredCapabilities;
+  var meta = [a.platform];
+  meta.push(a.browserName ? a.browserName : 'any');
+  meta.push(a.version ? a.version : 'any');
+  meta.push(a.name); // this is the test filename so always exists.
+  var metadata = meta.join('~').toLowerCase().replace(/ /g, '');
+  return SCREENSHOT_PATH + metadata + '_' + padLeft(FILECOUNT++) + '_';
 }
 
 module.exports.imgpath = imgpath;
