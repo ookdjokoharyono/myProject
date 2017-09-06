@@ -1,5 +1,5 @@
 {
-	"name": "myNightwatchProject",
+  "name": "myNightwatchProject",
   	"version": "0.0.1",
   	"description": "Learn how to use nightwatch for front-end testing. step-by-step tutorial",
   	"author": "dj",
@@ -9,12 +9,16 @@
   	},
 	"scripts": {
 		"postinstall": "node nightwatch.conf.js",
-		"e2e": "nightwatch --config nightwatch.conf.BASIC.js",
+		"e2e": "nightwatch --config nightwatch.conf.BASIC.js -e default,edge,firefox",
 		"sauce": "./node_modules/.bin/nightwatch -e chrome,ie11,android_s4_emulator,iphone_6_simulator"
 	},
 	"repository": {
 		"type": "git",
-    	"url": "git+https:https://github.com/ookdjokoharyono/myProject"
-    }
+    "url": "git+https:https://github.com/ookdjokoharyono/myProject"
+  },
+  "dependencies": {
+    "nightwatch": "^3.10.10",
+    "selenium-download": "^3.5.0"
+  }
 }
 
